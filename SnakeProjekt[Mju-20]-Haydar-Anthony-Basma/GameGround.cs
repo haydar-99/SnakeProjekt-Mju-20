@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 {
-    class Program
+    class GameGround
     {
-        static void Main(string[] args)
-        {
-
-            Console.WriteLine("Anthony Branch test");
-
-        }
     }
 }
