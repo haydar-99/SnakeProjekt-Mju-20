@@ -10,8 +10,12 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Anthony Branch test");
+            
+            GameGround gameGround = new GameGround();
+            GameGround.BuildGround();
+            Console.ReadKey();
+           
+            
 
         }
     }
