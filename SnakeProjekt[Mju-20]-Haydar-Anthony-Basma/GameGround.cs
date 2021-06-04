@@ -8,8 +8,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 {
     class GameGround
     {
-        private static int Width { get; set; }
-        private static int Height { get; set; }
+        public static int Width { get; set; }
+        public  static int Height { get; set; }
         public GameGround()
         {
             Width = 50;
