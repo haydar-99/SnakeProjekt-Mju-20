@@ -78,6 +78,14 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 key = keyInfo.KeyChar;
             }
         }
+        public void SnakeGrow(SnakeFood food)
+        {
+            if (SnakeCordinates[SnakeCordinates.Count-1].X==food.FoodX && SnakeCordinates[SnakeCordinates.Count - 1].Y == food.FoodY)
+            {
+                SnakeCordinates.Add(new Cordinate(X, Y));
+                food.FoodNewPos();
+            }
+        }
 
     }
 }
