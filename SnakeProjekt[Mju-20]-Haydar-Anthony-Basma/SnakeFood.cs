@@ -27,5 +27,10 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 Console.WriteLine("B");
            
         }
+        public void FoodNewPos()
+        {
+            FoodX = Random.Next(5, 48);
+            FoodY = Random.Next(5, 18);
+        }
     }
 }
