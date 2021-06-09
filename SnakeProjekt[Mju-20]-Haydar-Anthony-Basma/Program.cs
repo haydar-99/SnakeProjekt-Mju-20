@@ -15,7 +15,13 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             SnakeFood snakeFood = new SnakeFood();
             snakeObj snake = new snakeObj();
             GameGround.BuildGround();
-            snake.DrawSnake();
+            while (true)
+            {
+                snake.DrawSnake();
+                snake.Input();
+                snake.MoveSnake();
+
+            }
 
 
             Console.ReadKey();
