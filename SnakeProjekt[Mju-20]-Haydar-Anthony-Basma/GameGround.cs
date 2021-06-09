@@ -19,27 +19,35 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
         public static void BuildGround()
         {
             Console.Clear();
-            for (int i = 0; i < Width; i++)
+            for (int i = 1; i <= Width; i++)
             {
                 Console.SetCursorPosition(i, 0);
-                Console.WriteLine(".");
+                Console.Write("―");
             }
-            for (int i = 0; i < Height; i++)
+            for (int i = 1; i <= Width; i++)
+            {
+                Console.SetCursorPosition(i, (Height + 1));
+                Console.Write("―");
+            }
+            for (int i = 1; i <= Height; i++)
             {
                 Console.SetCursorPosition(0, i);
-                Console.WriteLine("|");
+                Console.Write("|");
             }
-            for (int i = 0; i < Width; i++)
+            for (int i = 1; i <= Height; i++)
             {
-                Console.SetCursorPosition(i, Height);
-                Console.WriteLine(".");
+                Console.SetCursorPosition((Width + 1), i);
+                Console.Write("|");
+            }
 
-            }
-            for (int i = 0; i < Height; i++)
-            {
-                Console.SetCursorPosition(Width, i);
-                Console.WriteLine("|");
-            }
+            Console.SetCursorPosition(0, 0);
+            Console.Write("+");
+            Console.SetCursorPosition(Width + 1, 0);
+            Console.Write("+");
+            Console.SetCursorPosition(0, Height + 1);
+            Console.Write("+");
+            Console.SetCursorPosition(Width + 1, Height + 1);
+            Console.Write("+");
 
 
         }
