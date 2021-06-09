@@ -8,8 +8,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 {
     class GameGround
     {
-        public static int Width { get; set; }
-        public  static int Height { get; set; }
+        public static  int Width { get; set; }
+        public static   int Height { get; set; }
         public GameGround()
         {
             Width = 50;
@@ -18,6 +18,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 
         public static void BuildGround()
         {
+            Console.Clear();
             for (int i = 0; i < Width; i++)
             {
                 Console.SetCursorPosition(i, 0);
