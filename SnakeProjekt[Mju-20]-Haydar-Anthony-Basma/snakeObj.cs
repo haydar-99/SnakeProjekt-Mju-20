@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 {
-    class snakeObj
+    class snakeObj:Snake_abstract
     {
+        public snakeObj()
+        {
+
+        }
     }
 }
