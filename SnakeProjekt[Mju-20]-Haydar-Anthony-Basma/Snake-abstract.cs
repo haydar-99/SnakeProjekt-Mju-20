@@ -11,7 +11,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
         ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
         public char key = 'w';
         public char dir = 'u';
-        Dictionary<int, int> bodyList;
+        public Dictionary<int, int> bodyList;
         public int X { get; set; }
         public int Y{ get; set; }
         public Snake_abstract()
