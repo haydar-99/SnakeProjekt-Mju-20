@@ -17,14 +17,14 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
         public SnakeFood()
         {
             FoodX = Random.Next(5, 48);
-            FoodY = Random.Next(5, 48);
+            FoodY = Random.Next(5, 18);
         }
 
         public  void DrawFood()
         {
           
                 Console.SetCursorPosition(FoodX, FoodY);
-                Console.WriteLine("¤");
+                Console.WriteLine("B");
            
         }
     }

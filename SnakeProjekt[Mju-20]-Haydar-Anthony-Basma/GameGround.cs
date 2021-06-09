@@ -40,7 +40,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 Console.SetCursorPosition(Width, i);
                 Console.WriteLine("|");
             }
-            
+
+
         }
 
     }
