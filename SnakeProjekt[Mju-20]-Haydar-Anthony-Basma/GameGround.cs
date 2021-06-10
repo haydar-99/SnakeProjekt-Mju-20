@@ -22,12 +22,12 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             for (int i = 1; i <= Width; i++)
             {
                 Console.SetCursorPosition(i, 0);
-                Console.Write("―");
+                Console.Write("-");
             }
             for (int i = 1; i <= Width; i++)
             {
                 Console.SetCursorPosition(i, (Height + 1));
-                Console.Write("―");
+                Console.Write("-");
             }
             for (int i = 1; i <= Height; i++)
             {
