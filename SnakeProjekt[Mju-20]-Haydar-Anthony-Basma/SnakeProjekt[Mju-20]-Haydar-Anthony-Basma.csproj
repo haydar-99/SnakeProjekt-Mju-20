@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Cordinations.cs" />
     <Compile Include="GameGround.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Snake-abstract.cs" />

@@ -10,14 +10,14 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
     {
         static void Main(string[] args)
         {
-            
+            MainMenu mainMenu = new MainMenu();
             GameGround gameGround = new GameGround();
             SnakeFood snakeFood = new SnakeFood();
             snakeObj snake = new snakeObj();
 
 
-
-            while (true)
+            mainMenu.ViewMainMenu();
+            while (mainMenu.start == true)
             {
                 GameGround.BuildGround();
 
