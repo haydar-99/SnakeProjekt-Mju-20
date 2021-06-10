@@ -31,7 +31,13 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
             Console.WriteLine("                         1- Let's Play               ");
+            Console.WriteLine("                   Play The Game with W A S D        ");
+            Console.WriteLine("                                                     ");
             Console.WriteLine("                         2- Quit The Game            ");
+            Console.WriteLine("                                                     ");
+            Console.WriteLine("                                                     ");
+            Console.WriteLine("                            Credit                   ");
+            Console.WriteLine("                    Haydar, Basma & Anthony          ");
             Console.WriteLine();
 
 

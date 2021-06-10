@@ -24,7 +24,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
         {
           
                 Console.SetCursorPosition(FoodX, FoodY);
-                Console.WriteLine("B");
+                Console.WriteLine("*");
            
         }
         public void FoodNewPos()
