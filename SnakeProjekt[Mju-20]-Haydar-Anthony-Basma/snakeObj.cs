@@ -26,6 +26,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             SnakeCordinates = new List<Cordinate>();
             SnakeCordinates.Add(new Cordinate(X, Y));
         }
+
+        //draws the snake into the game
         public override void DrawSnake()
         {
             try
@@ -44,6 +46,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
           
 
         }
+        //determines which directions you can move the snake, it stops the player from reversing his movement
+        //only lateral control of the snake is possible
         private void direction()
         {
             if (key == 'w' && dir != 'd')
@@ -63,6 +67,8 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 dir = 'l';
             }
         }
+        //changes the coordinates of where the snake should be drawn, then removes the drawing of its former position to
+        //emulate movement.
         public override void MoveSnake()
         {
             direction();
@@ -87,6 +93,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             SnakeCordinates.RemoveAt(0);
 
         }
+        //takes input from keyboard key presses
         public void Input()
         {
             if (Console.KeyAvailable)
@@ -104,34 +111,15 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             }
         }
 
+        //deals with wall collisions and determines whether the snake is dead or not
         public bool DeadSnake()
         {
             bool dead =false;
             if (SnakeCordinates[SnakeCordinates.Count - 1].X == GameGround.Width + 2 || SnakeCordinates[SnakeCordinates.Count - 1].Y == GameGround.Height + 2)
             {
-                ConsoleKeyInfo presschoice = new ConsoleKeyInfo();
-                int choiceReboot;
-
-                Console.SetCursorPosition(10, 10);
-                Console.WriteLine(" The snake is dead LOSER ");
-                Console.WriteLine("  ");
-                Console.WriteLine("        Press 1 - Restart");
-                Console.WriteLine("        Press 2 - Quit");
-                Console.ReadKey();
-                while (true)
-                {
-                    presschoice = Console.ReadKey(true);
-                    if (presschoice.Key == ConsoleKey.D1)
-                    {
-                        choiceReboot = 1;
-                        break;
-                    }
-                    else if (presschoice.Key == ConsoleKey.D2)
-                    {
-                        choiceReboot = 2;
-                        break;
-                    }
-                }
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.RestartMenu();
+                var choiceReboot = mainMenu.choicereboot;
 
                 switch (choiceReboot)
                 {
@@ -150,31 +138,11 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             }
             else if (SnakeCordinates[SnakeCordinates.Count - 1].X == 0 || SnakeCordinates[SnakeCordinates.Count - 1].Y == 0)
             {
-                ConsoleKeyInfo presschoice = new ConsoleKeyInfo();
-                int choiceReboot;
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.RestartMenu();
+                var choicereboot = mainMenu.choicereboot;
 
-                Console.SetCursorPosition(10, 10);
-                Console.WriteLine(" The snake is dead LOSER ");
-                Console.WriteLine("|  ");
-                Console.WriteLine("|             Press 1 - Restart   ");
-                Console.WriteLine("|             Press 2 - Quit      ");
-                Console.ReadKey();
-                while (true)
-                {
-                    presschoice = Console.ReadKey(true);
-                    if (presschoice.Key == ConsoleKey.D1)
-                    {
-                        choiceReboot = 1;
-                        break;
-                    }
-                    else if (presschoice.Key == ConsoleKey.D2)
-                    {
-                        choiceReboot = 2;
-                        break;
-                    }
-                }
-
-                switch (choiceReboot)
+                switch (choicereboot)
                 {
                     case 1:
                         restart();
@@ -185,33 +153,17 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                         Environment.Exit(0);
                         break;
                 }
+
                 dead = true;
             }
-            //else if(HeadCrash())
-            //{
-            //    Console.SetCursorPosition(10, 10);
-            //    Console.WriteLine(" The snake is dead LOSER ");
-            //    Thread.Sleep(4000);
-            //    dead = true;
-            //}
+
            
             return dead;
 
            
 
         }
-        //public bool HeadCrash()
-        //{
-        //    bool headCrash=false;
-        //    for (int i = 0; i < SnakeCordinates.Count; i++)
-        //    {
-        //        if (SnakeCordinates[SnakeCordinates.Count - 1].X==SnakeCordinates[i].X-2 || SnakeCordinates[SnakeCordinates.Count - 1].Y == SnakeCordinates[i].Y-2)
-        //        {
-        //            headCrash = true;
-        //        }
-        //    }
-        //    return headCrash;
-        //}
+
 
     }
 }
