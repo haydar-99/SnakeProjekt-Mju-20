@@ -20,11 +20,20 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
         }
         public override void DrawSnake()
         {
-            foreach (var  pos in SnakeCordinates)
+            try
             {
-                Console.SetCursorPosition(pos.X, pos.Y);
-                Console.WriteLine("@");
+                foreach (var pos in SnakeCordinates)
+                {
+                    Console.SetCursorPosition(pos.X, pos.Y);
+                    Console.WriteLine("@");
+                }
             }
+            catch (Exception)
+            {
+
+                DeadSnake();
+            }
+          
 
         }
         private void direction()
@@ -66,7 +75,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 X--;
             }
             SnakeCordinates.Add(new Cordinate(X, Y));
-            Thread.Sleep(300);
+            Thread.Sleep(100);
             SnakeCordinates.RemoveAt(0);
 
         }
@@ -85,6 +94,29 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 SnakeCordinates.Add(new Cordinate(X, Y));
                 food.FoodNewPos();
             }
+        }
+
+        public bool DeadSnake()
+        {
+            bool dead =false;
+            if (SnakeCordinates[SnakeCordinates.Count - 1].X == GameGround.Width + 2 || SnakeCordinates[SnakeCordinates.Count - 1].Y == GameGround.Height + 2)
+            {
+                Console.SetCursorPosition(10, 10);
+                Console.WriteLine(" The snake is dead LOSER ");
+                Thread.Sleep(4000);
+                dead = true;
+            }
+            else if (SnakeCordinates[SnakeCordinates.Count - 1].X == 0 || SnakeCordinates[SnakeCordinates.Count - 1].Y == 0)
+            {
+                Console.SetCursorPosition(10, 10);
+                Console.WriteLine(" The snake is dead LOSER ");
+                Thread.Sleep(4000);
+                dead = true;
+            }
+            return dead;
+
+           
+
         }
 
     }
