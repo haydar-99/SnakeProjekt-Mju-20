@@ -18,7 +18,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             SnakeCordinates = new List<Cordinate>();
             SnakeCordinates.Add(new Cordinate(X, Y));
         }
-        public void restarT()
+        public void restart()
         {
             SnakeCordinates.Clear();
             X = 20;
@@ -109,16 +109,82 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             bool dead =false;
             if (SnakeCordinates[SnakeCordinates.Count - 1].X == GameGround.Width + 2 || SnakeCordinates[SnakeCordinates.Count - 1].Y == GameGround.Height + 2)
             {
+                ConsoleKeyInfo presschoice = new ConsoleKeyInfo();
+                int choiceReboot;
+
                 Console.SetCursorPosition(10, 10);
                 Console.WriteLine(" The snake is dead LOSER ");
-                Thread.Sleep(4000);
+                Console.WriteLine("  ");
+                Console.WriteLine("        Press 1 - Restart");
+                Console.WriteLine("        Press 2 - Quit");
+                Console.ReadKey();
+                while (true)
+                {
+                    presschoice = Console.ReadKey(true);
+                    if (presschoice.Key == ConsoleKey.D1)
+                    {
+                        choiceReboot = 1;
+                        break;
+                    }
+                    else if (presschoice.Key == ConsoleKey.D2)
+                    {
+                        choiceReboot = 2;
+                        break;
+                    }
+                }
+
+                switch (choiceReboot)
+                {
+                    case 1:
+                        restart();
+                        break;
+
+
+                    case 2:
+                        Environment.Exit(0);
+                        break;
+                }
+
+                
                 dead = true;
             }
             else if (SnakeCordinates[SnakeCordinates.Count - 1].X == 0 || SnakeCordinates[SnakeCordinates.Count - 1].Y == 0)
             {
+                ConsoleKeyInfo presschoice = new ConsoleKeyInfo();
+                int choiceReboot;
+
                 Console.SetCursorPosition(10, 10);
                 Console.WriteLine(" The snake is dead LOSER ");
-                Thread.Sleep(4000);
+                Console.WriteLine("|  ");
+                Console.WriteLine("|             Press 1 - Restart   ");
+                Console.WriteLine("|             Press 2 - Quit      ");
+                Console.ReadKey();
+                while (true)
+                {
+                    presschoice = Console.ReadKey(true);
+                    if (presschoice.Key == ConsoleKey.D1)
+                    {
+                        choiceReboot = 1;
+                        break;
+                    }
+                    else if (presschoice.Key == ConsoleKey.D2)
+                    {
+                        choiceReboot = 2;
+                        break;
+                    }
+                }
+
+                switch (choiceReboot)
+                {
+                    case 1:
+                        restart();
+                        break;
+
+
+                    case 2:
+                        Environment.Exit(0);
+                        break;
+                }
                 dead = true;
             }
             //else if(HeadCrash())

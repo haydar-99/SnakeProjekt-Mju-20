@@ -36,7 +36,6 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                         {
                             mainMenu.start = false;
                             break;
-                            snake.restarT();
                         }
                     }
                     
