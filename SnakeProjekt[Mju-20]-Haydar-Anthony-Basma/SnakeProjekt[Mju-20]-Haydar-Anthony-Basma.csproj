@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cordinations.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameGround.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Program.cs" />
