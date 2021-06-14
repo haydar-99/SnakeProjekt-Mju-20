@@ -18,6 +18,14 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             SnakeCordinates = new List<Cordinate>();
             SnakeCordinates.Add(new Cordinate(X, Y));
         }
+        public void restarT()
+        {
+            SnakeCordinates.Clear();
+            X = 20;
+            Y = 5;
+            SnakeCordinates = new List<Cordinate>();
+            SnakeCordinates.Add(new Cordinate(X, Y));
+        }
         public override void DrawSnake()
         {
             try
@@ -113,11 +121,31 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 Thread.Sleep(4000);
                 dead = true;
             }
+            //else if(HeadCrash())
+            //{
+            //    Console.SetCursorPosition(10, 10);
+            //    Console.WriteLine(" The snake is dead LOSER ");
+            //    Thread.Sleep(4000);
+            //    dead = true;
+            //}
+           
             return dead;
 
            
 
         }
+        //public bool HeadCrash()
+        //{
+        //    bool headCrash=false;
+        //    for (int i = 0; i < SnakeCordinates.Count; i++)
+        //    {
+        //        if (SnakeCordinates[SnakeCordinates.Count - 1].X==SnakeCordinates[i].X-2 || SnakeCordinates[SnakeCordinates.Count - 1].Y == SnakeCordinates[i].Y-2)
+        //        {
+        //            headCrash = true;
+        //        }
+        //    }
+        //    return headCrash;
+        //}
 
     }
 }
