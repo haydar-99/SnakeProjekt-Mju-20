@@ -10,6 +10,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
     {
         public ConsoleKeyInfo press = new ConsoleKeyInfo();
         public Random rand = new Random();
+        public int choicereboot { get; set; }
         public bool start = false;
 
         public void ViewMainMenu()
@@ -68,6 +69,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                     break;
             }
         }
+        //Method that confirms with the player wheter or not they want to exit the application
         public void AreUsure(string Case)
         {
             while (true)
@@ -92,6 +94,36 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 
             }
         }
+
+        //Menu that pops up after you've lost the game. Its called upon in the snakeObj.DeadSnake
+        public void RestartMenu()
+        {
+            ConsoleKeyInfo presschoice = new ConsoleKeyInfo();
+
+            Console.SetCursorPosition(10, 10);
+            Console.WriteLine(" The snake is dead LOSER ");
+            Console.WriteLine("  ");
+            Console.WriteLine("        Press 1 - Restart");
+            Console.WriteLine("        Press 2 - Quit");
+            Console.ReadKey();
+            while (true)
+            {
+                presschoice = Console.ReadKey(true);
+                if (presschoice.Key == ConsoleKey.D1)
+                {
+                    choicereboot = 1;
+                    break;
+                }
+                else if (presschoice.Key == ConsoleKey.D2)
+                {
+                    choicereboot = 2;
+                    break;
+                }
+            }
+
+
+
+        }
     }
 
-}
+    }

@@ -8,6 +8,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
 {
     class GameGround
     {
+        //regulates the dimensions of the ground
         public static  int Width { get; set; }
         public static   int Height { get; set; }
         public GameGround()
@@ -15,7 +16,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
             Width = 50;
             Height = 20;
         }
-
+        //draws the playing ground
         public static void BuildGround()
         {
             Console.Clear();
