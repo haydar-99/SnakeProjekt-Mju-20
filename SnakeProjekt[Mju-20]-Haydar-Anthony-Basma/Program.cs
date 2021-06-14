@@ -29,6 +29,12 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 snake.MoveSnake();
                 snake.SnakeGrow(snakeFood);
 
+                if (snake.DeadSnake())
+                {
+                    break;
+                }
+                
+
             }
 
 
