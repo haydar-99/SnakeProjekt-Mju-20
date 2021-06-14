@@ -68,7 +68,7 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                     break;
             }
         }
-        void AreUsure(string Case)
+        public void AreUsure(string Case)
         {
             while (true)
             {
