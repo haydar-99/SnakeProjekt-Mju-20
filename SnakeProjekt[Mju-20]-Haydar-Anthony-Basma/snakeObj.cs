@@ -113,10 +113,27 @@ namespace SnakeProjekt_Mju_20__Haydar_Anthony_Basma
                 Thread.Sleep(4000);
                 dead = true;
             }
+            else if(HeadCrash())
+            {
+                dead = true;
+            }
+           
             return dead;
 
            
 
+        }
+        public bool HeadCrash()
+        {
+            bool headCrash=false;
+            for (int i = 0; i < SnakeCordinates.Count; i++)
+            {
+                if (SnakeCordinates[SnakeCordinates.Count - 1].X==SnakeCordinates[i].X || SnakeCordinates[SnakeCordinates.Count - 1].Y == SnakeCordinates[i].Y)
+                {
+                    headCrash = true;
+                }
+            }
+            return headCrash;
         }
 
     }
